@@ -1,0 +1,3376 @@
+{
+  "tables": [
+    {
+      "table_name": "artifacts",
+      "comment": null,
+      "column_count": 11
+    },
+    {
+      "table_name": "candidate_evidence_links",
+      "comment": null,
+      "column_count": 2
+    },
+    {
+      "table_name": "cost_model_versions",
+      "comment": null,
+      "column_count": 7
+    },
+    {
+      "table_name": "decision_candidates",
+      "comment": null,
+      "column_count": 9
+    },
+    {
+      "table_name": "experiment_conditions",
+      "comment": null,
+      "column_count": 8
+    },
+    {
+      "table_name": "node_executions",
+      "comment": null,
+      "column_count": 4
+    },
+    {
+      "table_name": "operation_versions",
+      "comment": null,
+      "column_count": 7
+    },
+    {
+      "table_name": "run_measurements",
+      "comment": null,
+      "column_count": 9
+    },
+    {
+      "table_name": "run_results",
+      "comment": null,
+      "column_count": 3
+    },
+    {
+      "table_name": "run_verifications",
+      "comment": null,
+      "column_count": 6
+    },
+    {
+      "table_name": "runtime_configurations",
+      "comment": null,
+      "column_count": 8
+    },
+    {
+      "table_name": "schema_migrations",
+      "comment": null,
+      "column_count": 3
+    },
+    {
+      "table_name": "selection_decisions",
+      "comment": null,
+      "column_count": 8
+    },
+    {
+      "table_name": "selection_policy_versions",
+      "comment": null,
+      "column_count": 5
+    },
+    {
+      "table_name": "task_artifacts",
+      "comment": null,
+      "column_count": 4
+    },
+    {
+      "table_name": "task_attempts",
+      "comment": null,
+      "column_count": 9
+    },
+    {
+      "table_name": "task_measurements",
+      "comment": null,
+      "column_count": 8
+    },
+    {
+      "table_name": "user_credentials",
+      "comment": null,
+      "column_count": 3
+    },
+    {
+      "table_name": "users",
+      "comment": null,
+      "column_count": 5
+    },
+    {
+      "table_name": "workflow_edges",
+      "comment": null,
+      "column_count": 3
+    },
+    {
+      "table_name": "workflow_nodes",
+      "comment": null,
+      "column_count": 7
+    },
+    {
+      "table_name": "workflow_runs",
+      "comment": null,
+      "column_count": 14
+    },
+    {
+      "table_name": "workflow_versions",
+      "comment": null,
+      "column_count": 5
+    },
+    {
+      "table_name": "workflows",
+      "comment": null,
+      "column_count": 5
+    }
+  ],
+  "columns": [
+    {
+      "table_name": "artifacts",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "artifacts",
+      "column_name": "owner_id",
+      "ordinal_position": 2,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "artifacts",
+      "column_name": "storage_key",
+      "ordinal_position": 3,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "artifacts",
+      "column_name": "original_name",
+      "ordinal_position": 4,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "artifacts",
+      "column_name": "media_kind",
+      "ordinal_position": 5,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "artifacts",
+      "column_name": "size_bytes",
+      "ordinal_position": 6,
+      "data_type": "bigint",
+      "udt_name": "int8",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": 64,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "artifacts",
+      "column_name": "decoded_pixels",
+      "ordinal_position": 7,
+      "data_type": "bigint",
+      "udt_name": "int8",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": 64,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "artifacts",
+      "column_name": "sha256",
+      "ordinal_position": 8,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "artifacts",
+      "column_name": "state",
+      "ordinal_position": 9,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "artifacts",
+      "column_name": "created_at",
+      "ordinal_position": 10,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "clock_timestamp()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "artifacts",
+      "column_name": "expires_at",
+      "ordinal_position": 11,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "candidate_evidence_links",
+      "column_name": "candidate_id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "candidate_evidence_links",
+      "column_name": "calibration_run_id",
+      "ordinal_position": 2,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "cost_model_versions",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "cost_model_versions",
+      "column_name": "code",
+      "ordinal_position": 2,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "cost_model_versions",
+      "column_name": "version_no",
+      "ordinal_position": 3,
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": 32,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "cost_model_versions",
+      "column_name": "currency",
+      "ordinal_position": 4,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "cost_model_versions",
+      "column_name": "rate_date",
+      "ordinal_position": 5,
+      "data_type": "date",
+      "udt_name": "date",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "cost_model_versions",
+      "column_name": "accounting_scope",
+      "ordinal_position": 6,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "cost_model_versions",
+      "column_name": "rates",
+      "ordinal_position": 7,
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "column_name": "decision_id",
+      "ordinal_position": 2,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "column_name": "runtime_configuration_id",
+      "ordinal_position": 3,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "column_name": "eligible",
+      "ordinal_position": 4,
+      "data_type": "boolean",
+      "udt_name": "bool",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "column_name": "exclusion_reason",
+      "ordinal_position": 5,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "column_name": "predicted_ms",
+      "ordinal_position": 6,
+      "data_type": "bigint",
+      "udt_name": "int8",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": 64,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "column_name": "predicted_cost",
+      "ordinal_position": 7,
+      "data_type": "numeric",
+      "udt_name": "numeric",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": 20,
+      "numeric_scale": 10,
+      "comment": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "column_name": "cost_model_id",
+      "ordinal_position": 8,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "column_name": "uncertainty_note",
+      "ordinal_position": 9,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "column_name": "scenario",
+      "ordinal_position": 2,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "column_name": "input_volume",
+      "ordinal_position": 3,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "column_name": "arrival_pattern",
+      "ordinal_position": 4,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "column_name": "mode",
+      "ordinal_position": 5,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "column_name": "dataset_split",
+      "ordinal_position": 6,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "column_name": "fixture_key",
+      "ordinal_position": 7,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "column_name": "protocol_version",
+      "ordinal_position": 8,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "node_executions",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "node_executions",
+      "column_name": "run_id",
+      "ordinal_position": 2,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "node_executions",
+      "column_name": "node_id",
+      "ordinal_position": 3,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "node_executions",
+      "column_name": "status",
+      "ordinal_position": 4,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": "'pending'::text",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "operation_versions",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "operation_versions",
+      "column_name": "code",
+      "ordinal_position": 2,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "operation_versions",
+      "column_name": "version",
+      "ordinal_position": 3,
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": 32,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "operation_versions",
+      "column_name": "input_kind",
+      "ordinal_position": 4,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "operation_versions",
+      "column_name": "output_kind",
+      "ordinal_position": 5,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "operation_versions",
+      "column_name": "parameter_contract",
+      "ordinal_position": 6,
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "operation_versions",
+      "column_name": "description",
+      "ordinal_position": 7,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_measurements",
+      "column_name": "run_id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_measurements",
+      "column_name": "end_to_end_ms",
+      "ordinal_position": 2,
+      "data_type": "bigint",
+      "udt_name": "int8",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": 64,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "run_measurements",
+      "column_name": "modeled_cost",
+      "ordinal_position": 3,
+      "data_type": "numeric",
+      "udt_name": "numeric",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": 20,
+      "numeric_scale": 10,
+      "comment": null
+    },
+    {
+      "table_name": "run_measurements",
+      "column_name": "cost_model_id",
+      "ordinal_position": 4,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_measurements",
+      "column_name": "observation_window_start",
+      "ordinal_position": 5,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_measurements",
+      "column_name": "observation_window_end",
+      "ordinal_position": 6,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_measurements",
+      "column_name": "allocated_idle_cost",
+      "ordinal_position": 7,
+      "data_type": "numeric",
+      "udt_name": "numeric",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": 20,
+      "numeric_scale": 10,
+      "comment": null
+    },
+    {
+      "table_name": "run_measurements",
+      "column_name": "unavailable_reason",
+      "ordinal_position": 8,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_measurements",
+      "column_name": "recorded_at",
+      "ordinal_position": 9,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "clock_timestamp()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_results",
+      "column_name": "run_id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_results",
+      "column_name": "artifact_id",
+      "ordinal_position": 2,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_results",
+      "column_name": "source_attempt_id",
+      "ordinal_position": 3,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_verifications",
+      "column_name": "run_id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_verifications",
+      "column_name": "outcome",
+      "ordinal_position": 2,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_verifications",
+      "column_name": "checker_version",
+      "ordinal_position": 3,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_verifications",
+      "column_name": "expected_result_key",
+      "ordinal_position": 4,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_verifications",
+      "column_name": "checked_at",
+      "ordinal_position": 5,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "clock_timestamp()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "run_verifications",
+      "column_name": "note",
+      "ordinal_position": 6,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "column_name": "environment",
+      "ordinal_position": 2,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "column_name": "version_no",
+      "ordinal_position": 3,
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": 32,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "column_name": "region",
+      "ordinal_position": 4,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "column_name": "execution_model",
+      "ordinal_position": 5,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "column_name": "cpu_units",
+      "ordinal_position": 6,
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": 32,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "column_name": "memory_mib",
+      "ordinal_position": 7,
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": 32,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "column_name": "settings",
+      "ordinal_position": 8,
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'{}'::jsonb",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "schema_migrations",
+      "column_name": "version",
+      "ordinal_position": 1,
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": 32,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "schema_migrations",
+      "column_name": "description",
+      "ordinal_position": 2,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "schema_migrations",
+      "column_name": "applied_at",
+      "ordinal_position": 3,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "clock_timestamp()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "column_name": "execution_id",
+      "ordinal_position": 2,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "column_name": "attempt_no",
+      "ordinal_position": 3,
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": 32,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "column_name": "selected_candidate_id",
+      "ordinal_position": 4,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "column_name": "is_fallback",
+      "ordinal_position": 5,
+      "data_type": "boolean",
+      "udt_name": "bool",
+      "is_nullable": "NO",
+      "column_default": "false",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "column_name": "explanation",
+      "ordinal_position": 6,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "column_name": "created_at",
+      "ordinal_position": 7,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "clock_timestamp()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "column_name": "sealed_at",
+      "ordinal_position": 8,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "selection_policy_versions",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "selection_policy_versions",
+      "column_name": "code",
+      "ordinal_position": 2,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "selection_policy_versions",
+      "column_name": "version_no",
+      "ordinal_position": 3,
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": 32,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "selection_policy_versions",
+      "column_name": "definition",
+      "ordinal_position": 4,
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "selection_policy_versions",
+      "column_name": "created_at",
+      "ordinal_position": 5,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "clock_timestamp()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_artifacts",
+      "column_name": "attempt_id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_artifacts",
+      "column_name": "artifact_id",
+      "ordinal_position": 2,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_artifacts",
+      "column_name": "direction",
+      "ordinal_position": 3,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_artifacts",
+      "column_name": "port_name",
+      "ordinal_position": 4,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_attempts",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_attempts",
+      "column_name": "decision_id",
+      "ordinal_position": 2,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_attempts",
+      "column_name": "dispatch_reference",
+      "ordinal_position": 3,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_attempts",
+      "column_name": "status",
+      "ordinal_position": 4,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": "'queued'::text",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_attempts",
+      "column_name": "queued_at",
+      "ordinal_position": 5,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "clock_timestamp()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_attempts",
+      "column_name": "started_at",
+      "ordinal_position": 6,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_attempts",
+      "column_name": "finished_at",
+      "ordinal_position": 7,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_attempts",
+      "column_name": "error_code",
+      "ordinal_position": 8,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_attempts",
+      "column_name": "safe_error_message",
+      "ordinal_position": 9,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_measurements",
+      "column_name": "attempt_id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_measurements",
+      "column_name": "processing_ms",
+      "ordinal_position": 2,
+      "data_type": "bigint",
+      "udt_name": "int8",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": 64,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "task_measurements",
+      "column_name": "modeled_cost",
+      "ordinal_position": 3,
+      "data_type": "numeric",
+      "udt_name": "numeric",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": 20,
+      "numeric_scale": 10,
+      "comment": null
+    },
+    {
+      "table_name": "task_measurements",
+      "column_name": "cost_model_id",
+      "ordinal_position": 4,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_measurements",
+      "column_name": "actual_cpu_seconds",
+      "ordinal_position": 5,
+      "data_type": "numeric",
+      "udt_name": "numeric",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": 20,
+      "numeric_scale": 6,
+      "comment": null
+    },
+    {
+      "table_name": "task_measurements",
+      "column_name": "peak_memory_bytes",
+      "ordinal_position": 6,
+      "data_type": "bigint",
+      "udt_name": "int8",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": 64,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "task_measurements",
+      "column_name": "unavailable_reason",
+      "ordinal_position": 7,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "task_measurements",
+      "column_name": "recorded_at",
+      "ordinal_position": 8,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "clock_timestamp()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "user_credentials",
+      "column_name": "user_id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "user_credentials",
+      "column_name": "password_hash",
+      "ordinal_position": 2,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "user_credentials",
+      "column_name": "updated_at",
+      "ordinal_position": 3,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "clock_timestamp()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "users",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "users",
+      "column_name": "email",
+      "ordinal_position": 2,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "users",
+      "column_name": "display_name",
+      "ordinal_position": 3,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "users",
+      "column_name": "is_active",
+      "ordinal_position": 4,
+      "data_type": "boolean",
+      "udt_name": "bool",
+      "is_nullable": "NO",
+      "column_default": "true",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "users",
+      "column_name": "created_at",
+      "ordinal_position": 5,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "clock_timestamp()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_edges",
+      "column_name": "version_id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_edges",
+      "column_name": "source_node_id",
+      "ordinal_position": 2,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_edges",
+      "column_name": "target_node_id",
+      "ordinal_position": 3,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_nodes",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_nodes",
+      "column_name": "version_id",
+      "ordinal_position": 2,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_nodes",
+      "column_name": "node_key",
+      "ordinal_position": 3,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_nodes",
+      "column_name": "operation_version_id",
+      "ordinal_position": 4,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_nodes",
+      "column_name": "parameters",
+      "ordinal_position": 5,
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'{}'::jsonb",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_nodes",
+      "column_name": "position_x",
+      "ordinal_position": 6,
+      "data_type": "numeric",
+      "udt_name": "numeric",
+      "is_nullable": "NO",
+      "column_default": "0",
+      "numeric_precision": 10,
+      "numeric_scale": 2,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_nodes",
+      "column_name": "position_y",
+      "ordinal_position": 7,
+      "data_type": "numeric",
+      "udt_name": "numeric",
+      "is_nullable": "NO",
+      "column_default": "0",
+      "numeric_precision": 10,
+      "numeric_scale": 2,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "version_id",
+      "ordinal_position": 2,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "input_artifact_id",
+      "ordinal_position": 3,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "policy_version_id",
+      "ordinal_position": 4,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "priority",
+      "ordinal_position": 5,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "condition_id",
+      "ordinal_position": 6,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "trial_no",
+      "ordinal_position": 7,
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": 32,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "data_origin",
+      "ordinal_position": 8,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "request_key",
+      "ordinal_position": 9,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "status",
+      "ordinal_position": 10,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": "'accepted'::text",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "accepted_at",
+      "ordinal_position": 11,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "clock_timestamp()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "started_at",
+      "ordinal_position": 12,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "finished_at",
+      "ordinal_position": 13,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "column_name": "error_code",
+      "ordinal_position": 14,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_versions",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_versions",
+      "column_name": "workflow_id",
+      "ordinal_position": 2,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_versions",
+      "column_name": "version_no",
+      "ordinal_position": 3,
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": 32,
+      "numeric_scale": 0,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_versions",
+      "column_name": "created_at",
+      "ordinal_position": 4,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "clock_timestamp()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflow_versions",
+      "column_name": "published_at",
+      "ordinal_position": 5,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflows",
+      "column_name": "id",
+      "ordinal_position": 1,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflows",
+      "column_name": "owner_id",
+      "ordinal_position": 2,
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflows",
+      "column_name": "name",
+      "ordinal_position": 3,
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflows",
+      "column_name": "archived_at",
+      "ordinal_position": 4,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    },
+    {
+      "table_name": "workflows",
+      "column_name": "created_at",
+      "ordinal_position": 5,
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "clock_timestamp()",
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "comment": null
+    }
+  ],
+  "constraints": [
+    {
+      "table_name": "artifacts",
+      "name": "artifacts_check",
+      "type": "c",
+      "definition": "CHECK (((expires_at IS NULL) OR (expires_at > created_at)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "artifacts",
+      "name": "artifacts_check1",
+      "type": "c",
+      "definition": "CHECK (((media_kind = 'image'::text) OR (decoded_pixels IS NULL)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "artifacts",
+      "name": "artifacts_check2",
+      "type": "c",
+      "definition": "CHECK (((state <> 'complete'::text) OR ((sha256 IS NOT NULL) AND ((media_kind <> 'image'::text) OR (decoded_pixels IS NOT NULL)))))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "artifacts",
+      "name": "artifacts_decoded_pixels_check",
+      "type": "c",
+      "definition": "CHECK (((decoded_pixels >= 1) AND (decoded_pixels <= 20000000)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "artifacts",
+      "name": "artifacts_media_kind_check",
+      "type": "c",
+      "definition": "CHECK ((media_kind = ANY (ARRAY['csv'::text, 'json'::text, 'image'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "artifacts",
+      "name": "artifacts_original_name_check",
+      "type": "c",
+      "definition": "CHECK (((length(btrim(original_name)) >= 1) AND (length(btrim(original_name)) <= 255)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "artifacts",
+      "name": "artifacts_owner_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (owner_id) REFERENCES app.users(id)",
+      "referenced_table": "users"
+    },
+    {
+      "table_name": "artifacts",
+      "name": "artifacts_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "artifacts",
+      "name": "artifacts_sha256_check",
+      "type": "c",
+      "definition": "CHECK ((sha256 ~ '^[a-f0-9]{64}$'::text))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "artifacts",
+      "name": "artifacts_size_bytes_check",
+      "type": "c",
+      "definition": "CHECK (((size_bytes >= 0) AND (size_bytes <= 10485760)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "artifacts",
+      "name": "artifacts_state_check",
+      "type": "c",
+      "definition": "CHECK ((state = ANY (ARRAY['pending'::text, 'complete'::text, 'expired'::text, 'deleted'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "artifacts",
+      "name": "artifacts_storage_key_check",
+      "type": "c",
+      "definition": "CHECK ((length(btrim(storage_key)) > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "artifacts",
+      "name": "artifacts_storage_key_key",
+      "type": "u",
+      "definition": "UNIQUE (storage_key)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "candidate_evidence_links",
+      "name": "candidate_evidence_links_calibration_run_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (calibration_run_id) REFERENCES app.workflow_runs(id)",
+      "referenced_table": "workflow_runs"
+    },
+    {
+      "table_name": "candidate_evidence_links",
+      "name": "candidate_evidence_links_candidate_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (candidate_id) REFERENCES app.decision_candidates(id)",
+      "referenced_table": "decision_candidates"
+    },
+    {
+      "table_name": "candidate_evidence_links",
+      "name": "candidate_evidence_links_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (candidate_id, calibration_run_id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "cost_model_versions",
+      "name": "cost_model_versions_accounting_scope_check",
+      "type": "c",
+      "definition": "CHECK ((length(btrim(accounting_scope)) > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "cost_model_versions",
+      "name": "cost_model_versions_code_version_no_key",
+      "type": "u",
+      "definition": "UNIQUE (code, version_no)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "cost_model_versions",
+      "name": "cost_model_versions_currency_check",
+      "type": "c",
+      "definition": "CHECK ((currency ~ '^[A-Z]{3}$'::text))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "cost_model_versions",
+      "name": "cost_model_versions_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "cost_model_versions",
+      "name": "cost_model_versions_rates_check",
+      "type": "c",
+      "definition": "CHECK ((jsonb_typeof(rates) = 'object'::text))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "cost_model_versions",
+      "name": "cost_model_versions_version_no_check",
+      "type": "c",
+      "definition": "CHECK ((version_no > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "name": "decision_candidates_check",
+      "type": "c",
+      "definition": "CHECK (((eligible AND (exclusion_reason IS NULL)) OR ((NOT eligible) AND (exclusion_reason IS NOT NULL) AND (length(btrim(exclusion_reason)) > 0))))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "name": "decision_candidates_check1",
+      "type": "c",
+      "definition": "CHECK (((predicted_cost IS NULL) OR (cost_model_id IS NOT NULL)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "name": "decision_candidates_cost_model_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (cost_model_id) REFERENCES app.cost_model_versions(id)",
+      "referenced_table": "cost_model_versions"
+    },
+    {
+      "table_name": "decision_candidates",
+      "name": "decision_candidates_decision_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (decision_id) REFERENCES app.selection_decisions(id)",
+      "referenced_table": "selection_decisions"
+    },
+    {
+      "table_name": "decision_candidates",
+      "name": "decision_candidates_decision_id_id_key",
+      "type": "u",
+      "definition": "UNIQUE (decision_id, id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "name": "decision_candidates_decision_id_runtime_configuration_id_key",
+      "type": "u",
+      "definition": "UNIQUE (decision_id, runtime_configuration_id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "name": "decision_candidates_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "name": "decision_candidates_predicted_cost_check",
+      "type": "c",
+      "definition": "CHECK (((predicted_cost >= (0)::numeric) AND (predicted_cost < 'Infinity'::numeric)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "name": "decision_candidates_predicted_ms_check",
+      "type": "c",
+      "definition": "CHECK ((predicted_ms >= 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "decision_candidates",
+      "name": "decision_candidates_runtime_configuration_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (runtime_configuration_id) REFERENCES app.runtime_configurations(id)",
+      "referenced_table": "runtime_configurations"
+    },
+    {
+      "table_name": "experiment_conditions",
+      "name": "experiment_conditions_arrival_pattern_check",
+      "type": "c",
+      "definition": "CHECK ((arrival_pattern = ANY (ARRAY['isolated'::text, 'grouped'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "name": "experiment_conditions_dataset_split_check",
+      "type": "c",
+      "definition": "CHECK ((dataset_split = ANY (ARRAY['calibration'::text, 'evaluation'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "name": "experiment_conditions_input_volume_check",
+      "type": "c",
+      "definition": "CHECK ((input_volume = ANY (ARRAY['small'::text, 'large'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "name": "experiment_conditions_mode_check",
+      "type": "c",
+      "definition": "CHECK ((mode = ANY (ARRAY['worker_only'::text, 'lambda_only'::text, 'fargate_only'::text, 'auto_balanced'::text, 'auto_fastest'::text, 'auto_cheapest'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "name": "experiment_conditions_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "name": "experiment_conditions_scenario_check",
+      "type": "c",
+      "definition": "CHECK ((scenario = ANY (ARRAY['csv'::text, 'image'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "experiment_conditions",
+      "name": "experiment_conditions_scenario_input_volume_arrival_pattern_key",
+      "type": "u",
+      "definition": "UNIQUE (scenario, input_volume, arrival_pattern, mode, dataset_split, fixture_key, protocol_version)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "node_executions",
+      "name": "node_executions_node_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (node_id) REFERENCES app.workflow_nodes(id)",
+      "referenced_table": "workflow_nodes"
+    },
+    {
+      "table_name": "node_executions",
+      "name": "node_executions_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "node_executions",
+      "name": "node_executions_run_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (run_id) REFERENCES app.workflow_runs(id)",
+      "referenced_table": "workflow_runs"
+    },
+    {
+      "table_name": "node_executions",
+      "name": "node_executions_run_id_node_id_key",
+      "type": "u",
+      "definition": "UNIQUE (run_id, node_id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "node_executions",
+      "name": "node_executions_status_check",
+      "type": "c",
+      "definition": "CHECK ((status = ANY (ARRAY['pending'::text, 'running'::text, 'succeeded'::text, 'failed'::text, 'skipped'::text, 'cancelled'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "operation_versions",
+      "name": "operation_versions_code_version_key",
+      "type": "u",
+      "definition": "UNIQUE (code, version)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "operation_versions",
+      "name": "operation_versions_input_kind_check",
+      "type": "c",
+      "definition": "CHECK ((input_kind = ANY (ARRAY['csv'::text, 'json'::text, 'image'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "operation_versions",
+      "name": "operation_versions_output_kind_check",
+      "type": "c",
+      "definition": "CHECK ((output_kind = ANY (ARRAY['csv'::text, 'json'::text, 'image'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "operation_versions",
+      "name": "operation_versions_parameter_contract_check",
+      "type": "c",
+      "definition": "CHECK ((jsonb_typeof(parameter_contract) = 'object'::text))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "operation_versions",
+      "name": "operation_versions_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "operation_versions",
+      "name": "operation_versions_version_check",
+      "type": "c",
+      "definition": "CHECK ((version > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_measurements",
+      "name": "run_measurements_allocated_idle_cost_check",
+      "type": "c",
+      "definition": "CHECK (((allocated_idle_cost >= (0)::numeric) AND (allocated_idle_cost < 'Infinity'::numeric)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_measurements",
+      "name": "run_measurements_check",
+      "type": "c",
+      "definition": "CHECK (((modeled_cost IS NULL) OR (cost_model_id IS NOT NULL)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_measurements",
+      "name": "run_measurements_check1",
+      "type": "c",
+      "definition": "CHECK (((observation_window_start IS NULL) = (observation_window_end IS NULL)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_measurements",
+      "name": "run_measurements_check2",
+      "type": "c",
+      "definition": "CHECK (((observation_window_end IS NULL) OR (observation_window_end > observation_window_start)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_measurements",
+      "name": "run_measurements_check3",
+      "type": "c",
+      "definition": "CHECK (((allocated_idle_cost IS NULL) OR ((observation_window_start IS NOT NULL) AND (cost_model_id IS NOT NULL))))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_measurements",
+      "name": "run_measurements_check4",
+      "type": "c",
+      "definition": "CHECK ((((end_to_end_ms IS NOT NULL) AND (modeled_cost IS NOT NULL)) OR ((unavailable_reason IS NOT NULL) AND (length(btrim(unavailable_reason)) > 0))))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_measurements",
+      "name": "run_measurements_cost_model_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (cost_model_id) REFERENCES app.cost_model_versions(id)",
+      "referenced_table": "cost_model_versions"
+    },
+    {
+      "table_name": "run_measurements",
+      "name": "run_measurements_end_to_end_ms_check",
+      "type": "c",
+      "definition": "CHECK ((end_to_end_ms >= 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_measurements",
+      "name": "run_measurements_modeled_cost_check",
+      "type": "c",
+      "definition": "CHECK (((modeled_cost >= (0)::numeric) AND (modeled_cost < 'Infinity'::numeric)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_measurements",
+      "name": "run_measurements_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (run_id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_measurements",
+      "name": "run_measurements_run_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (run_id) REFERENCES app.workflow_runs(id)",
+      "referenced_table": "workflow_runs"
+    },
+    {
+      "table_name": "run_results",
+      "name": "run_results_artifact_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (artifact_id) REFERENCES app.artifacts(id)",
+      "referenced_table": "artifacts"
+    },
+    {
+      "table_name": "run_results",
+      "name": "run_results_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (run_id, artifact_id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_results",
+      "name": "run_results_run_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (run_id) REFERENCES app.workflow_runs(id)",
+      "referenced_table": "workflow_runs"
+    },
+    {
+      "table_name": "run_results",
+      "name": "run_results_source_attempt_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (source_attempt_id) REFERENCES app.task_attempts(id)",
+      "referenced_table": "task_attempts"
+    },
+    {
+      "table_name": "run_verifications",
+      "name": "run_verifications_checker_version_check",
+      "type": "c",
+      "definition": "CHECK ((length(btrim(checker_version)) > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_verifications",
+      "name": "run_verifications_expected_result_key_check",
+      "type": "c",
+      "definition": "CHECK ((length(btrim(expected_result_key)) > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_verifications",
+      "name": "run_verifications_outcome_check",
+      "type": "c",
+      "definition": "CHECK ((outcome = ANY (ARRAY['passed'::text, 'failed'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_verifications",
+      "name": "run_verifications_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (run_id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "run_verifications",
+      "name": "run_verifications_run_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (run_id) REFERENCES app.workflow_runs(id)",
+      "referenced_table": "workflow_runs"
+    },
+    {
+      "table_name": "runtime_configurations",
+      "name": "runtime_configurations_cpu_units_check",
+      "type": "c",
+      "definition": "CHECK ((cpu_units > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "name": "runtime_configurations_environment_check",
+      "type": "c",
+      "definition": "CHECK ((environment = ANY (ARRAY['worker'::text, 'lambda'::text, 'fargate'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "name": "runtime_configurations_environment_version_no_key",
+      "type": "u",
+      "definition": "UNIQUE (environment, version_no)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "name": "runtime_configurations_memory_mib_check",
+      "type": "c",
+      "definition": "CHECK ((memory_mib > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "name": "runtime_configurations_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "name": "runtime_configurations_region_check",
+      "type": "c",
+      "definition": "CHECK ((length(btrim(region)) > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "name": "runtime_configurations_settings_check",
+      "type": "c",
+      "definition": "CHECK ((jsonb_typeof(settings) = 'object'::text))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "runtime_configurations",
+      "name": "runtime_configurations_version_no_check",
+      "type": "c",
+      "definition": "CHECK ((version_no > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "schema_migrations",
+      "name": "schema_migrations_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (version)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "name": "selected_candidate_same_decision",
+      "type": "f",
+      "definition": "FOREIGN KEY (id, selected_candidate_id) REFERENCES app.decision_candidates(decision_id, id)",
+      "referenced_table": "decision_candidates"
+    },
+    {
+      "table_name": "selection_decisions",
+      "name": "selection_decisions_attempt_no_check",
+      "type": "c",
+      "definition": "CHECK ((attempt_no > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "name": "selection_decisions_check",
+      "type": "c",
+      "definition": "CHECK (((sealed_at IS NULL) OR (sealed_at >= created_at)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "name": "selection_decisions_check1",
+      "type": "c",
+      "definition": "CHECK (((NOT is_fallback) OR (selected_candidate_id IS NOT NULL)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "name": "selection_decisions_execution_id_attempt_no_key",
+      "type": "u",
+      "definition": "UNIQUE (execution_id, attempt_no)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "name": "selection_decisions_execution_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (execution_id) REFERENCES app.node_executions(id)",
+      "referenced_table": "node_executions"
+    },
+    {
+      "table_name": "selection_decisions",
+      "name": "selection_decisions_explanation_check",
+      "type": "c",
+      "definition": "CHECK ((length(btrim(explanation)) > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "selection_decisions",
+      "name": "selection_decisions_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "selection_policy_versions",
+      "name": "selection_policy_versions_code_version_no_key",
+      "type": "u",
+      "definition": "UNIQUE (code, version_no)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "selection_policy_versions",
+      "name": "selection_policy_versions_definition_check",
+      "type": "c",
+      "definition": "CHECK ((jsonb_typeof(definition) = 'object'::text))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "selection_policy_versions",
+      "name": "selection_policy_versions_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "selection_policy_versions",
+      "name": "selection_policy_versions_version_no_check",
+      "type": "c",
+      "definition": "CHECK ((version_no > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_artifacts",
+      "name": "task_artifacts_artifact_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (artifact_id) REFERENCES app.artifacts(id)",
+      "referenced_table": "artifacts"
+    },
+    {
+      "table_name": "task_artifacts",
+      "name": "task_artifacts_attempt_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (attempt_id) REFERENCES app.task_attempts(id)",
+      "referenced_table": "task_attempts"
+    },
+    {
+      "table_name": "task_artifacts",
+      "name": "task_artifacts_direction_check",
+      "type": "c",
+      "definition": "CHECK ((direction = ANY (ARRAY['input'::text, 'output'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_artifacts",
+      "name": "task_artifacts_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (attempt_id, direction, port_name)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_artifacts",
+      "name": "task_artifacts_port_name_check",
+      "type": "c",
+      "definition": "CHECK ((length(btrim(port_name)) > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_attempts",
+      "name": "task_attempts_check",
+      "type": "c",
+      "definition": "CHECK (((started_at IS NULL) OR (started_at >= queued_at)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_attempts",
+      "name": "task_attempts_check1",
+      "type": "c",
+      "definition": "CHECK (((finished_at IS NULL) OR (finished_at >= COALESCE(started_at, queued_at))))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_attempts",
+      "name": "task_attempts_check2",
+      "type": "c",
+      "definition": "CHECK (((status = ANY (ARRAY['succeeded'::text, 'failed'::text, 'cancelled'::text])) = (finished_at IS NOT NULL)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_attempts",
+      "name": "task_attempts_check3",
+      "type": "c",
+      "definition": "CHECK (((status <> ALL (ARRAY['running'::text, 'succeeded'::text])) OR (started_at IS NOT NULL)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_attempts",
+      "name": "task_attempts_check4",
+      "type": "c",
+      "definition": "CHECK (((status <> 'failed'::text) OR (error_code IS NOT NULL)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_attempts",
+      "name": "task_attempts_decision_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (decision_id) REFERENCES app.selection_decisions(id)",
+      "referenced_table": "selection_decisions"
+    },
+    {
+      "table_name": "task_attempts",
+      "name": "task_attempts_decision_id_key",
+      "type": "u",
+      "definition": "UNIQUE (decision_id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_attempts",
+      "name": "task_attempts_dispatch_reference_key",
+      "type": "u",
+      "definition": "UNIQUE (dispatch_reference)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_attempts",
+      "name": "task_attempts_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_attempts",
+      "name": "task_attempts_status_check",
+      "type": "c",
+      "definition": "CHECK ((status = ANY (ARRAY['queued'::text, 'running'::text, 'succeeded'::text, 'failed'::text, 'cancelled'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_measurements",
+      "name": "task_measurements_actual_cpu_seconds_check",
+      "type": "c",
+      "definition": "CHECK (((actual_cpu_seconds >= (0)::numeric) AND (actual_cpu_seconds < 'Infinity'::numeric)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_measurements",
+      "name": "task_measurements_attempt_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (attempt_id) REFERENCES app.task_attempts(id)",
+      "referenced_table": "task_attempts"
+    },
+    {
+      "table_name": "task_measurements",
+      "name": "task_measurements_check",
+      "type": "c",
+      "definition": "CHECK (((modeled_cost IS NULL) OR (cost_model_id IS NOT NULL)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_measurements",
+      "name": "task_measurements_check1",
+      "type": "c",
+      "definition": "CHECK ((((processing_ms IS NOT NULL) AND (modeled_cost IS NOT NULL) AND (actual_cpu_seconds IS NOT NULL) AND (peak_memory_bytes IS NOT NULL)) OR ((unavailable_reason IS NOT NULL) AND (length(btrim(unavailable_reason)) > 0))))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_measurements",
+      "name": "task_measurements_cost_model_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (cost_model_id) REFERENCES app.cost_model_versions(id)",
+      "referenced_table": "cost_model_versions"
+    },
+    {
+      "table_name": "task_measurements",
+      "name": "task_measurements_modeled_cost_check",
+      "type": "c",
+      "definition": "CHECK (((modeled_cost >= (0)::numeric) AND (modeled_cost < 'Infinity'::numeric)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_measurements",
+      "name": "task_measurements_peak_memory_bytes_check",
+      "type": "c",
+      "definition": "CHECK ((peak_memory_bytes >= 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_measurements",
+      "name": "task_measurements_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (attempt_id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "task_measurements",
+      "name": "task_measurements_processing_ms_check",
+      "type": "c",
+      "definition": "CHECK ((processing_ms >= 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "user_credentials",
+      "name": "user_credentials_password_hash_check",
+      "type": "c",
+      "definition": "CHECK ((password_hash ~ '^\\$pbkdf2-sha256\\$600000\\$[A-Za-z0-9+/]{22}==\\$[A-Za-z0-9+/]{43}=$'::text))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "user_credentials",
+      "name": "user_credentials_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (user_id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "user_credentials",
+      "name": "user_credentials_user_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (user_id) REFERENCES app.users(id)",
+      "referenced_table": "users"
+    },
+    {
+      "table_name": "users",
+      "name": "users_display_name_check",
+      "type": "c",
+      "definition": "CHECK (((length(btrim(display_name)) >= 1) AND (length(btrim(display_name)) <= 100)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "users",
+      "name": "users_email_check",
+      "type": "c",
+      "definition": "CHECK (((email = lower(email)) AND (email ~ '^[^@[:space:]]+@[^@[:space:]]+\\.[^@[:space:]]+$'::text)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "users",
+      "name": "users_email_key",
+      "type": "u",
+      "definition": "UNIQUE (email)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "users",
+      "name": "users_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_edges",
+      "name": "workflow_edges_check",
+      "type": "c",
+      "definition": "CHECK ((source_node_id <> target_node_id))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_edges",
+      "name": "workflow_edges_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (version_id, source_node_id, target_node_id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_edges",
+      "name": "workflow_edges_version_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (version_id) REFERENCES app.workflow_versions(id)",
+      "referenced_table": "workflow_versions"
+    },
+    {
+      "table_name": "workflow_edges",
+      "name": "workflow_edges_version_id_source_node_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (version_id, source_node_id) REFERENCES app.workflow_nodes(version_id, id)",
+      "referenced_table": "workflow_nodes"
+    },
+    {
+      "table_name": "workflow_edges",
+      "name": "workflow_edges_version_id_target_node_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (version_id, target_node_id) REFERENCES app.workflow_nodes(version_id, id)",
+      "referenced_table": "workflow_nodes"
+    },
+    {
+      "table_name": "workflow_nodes",
+      "name": "workflow_nodes_node_key_check",
+      "type": "c",
+      "definition": "CHECK (((length(btrim(node_key)) >= 1) AND (length(btrim(node_key)) <= 80)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_nodes",
+      "name": "workflow_nodes_operation_version_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (operation_version_id) REFERENCES app.operation_versions(id)",
+      "referenced_table": "operation_versions"
+    },
+    {
+      "table_name": "workflow_nodes",
+      "name": "workflow_nodes_parameters_check",
+      "type": "c",
+      "definition": "CHECK ((jsonb_typeof(parameters) = 'object'::text))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_nodes",
+      "name": "workflow_nodes_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_nodes",
+      "name": "workflow_nodes_version_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (version_id) REFERENCES app.workflow_versions(id)",
+      "referenced_table": "workflow_versions"
+    },
+    {
+      "table_name": "workflow_nodes",
+      "name": "workflow_nodes_version_id_id_key",
+      "type": "u",
+      "definition": "UNIQUE (version_id, id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_nodes",
+      "name": "workflow_nodes_version_id_node_key_key",
+      "type": "u",
+      "definition": "UNIQUE (version_id, node_key)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_check",
+      "type": "c",
+      "definition": "CHECK (((condition_id IS NULL) = (trial_no IS NULL)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_check1",
+      "type": "c",
+      "definition": "CHECK (((started_at IS NULL) OR (started_at >= accepted_at)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_check2",
+      "type": "c",
+      "definition": "CHECK (((finished_at IS NULL) OR (finished_at >= COALESCE(started_at, accepted_at))))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_check3",
+      "type": "c",
+      "definition": "CHECK (((status = ANY (ARRAY['succeeded'::text, 'failed'::text, 'cancelled'::text])) = (finished_at IS NOT NULL)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_check4",
+      "type": "c",
+      "definition": "CHECK (((status <> ALL (ARRAY['running'::text, 'succeeded'::text])) OR (started_at IS NOT NULL)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_check5",
+      "type": "c",
+      "definition": "CHECK (((status <> 'failed'::text) OR (error_code IS NOT NULL)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_condition_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (condition_id) REFERENCES app.experiment_conditions(id)",
+      "referenced_table": "experiment_conditions"
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_condition_id_trial_no_key",
+      "type": "u",
+      "definition": "UNIQUE (condition_id, trial_no)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_data_origin_check",
+      "type": "c",
+      "definition": "CHECK ((data_origin = ANY (ARRAY['synthetic'::text, 'observed'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_input_artifact_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (input_artifact_id) REFERENCES app.artifacts(id)",
+      "referenced_table": "artifacts"
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_policy_version_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (policy_version_id) REFERENCES app.selection_policy_versions(id)",
+      "referenced_table": "selection_policy_versions"
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_priority_check",
+      "type": "c",
+      "definition": "CHECK ((priority = ANY (ARRAY['balanced'::text, 'fastest'::text, 'cheapest'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_status_check",
+      "type": "c",
+      "definition": "CHECK ((status = ANY (ARRAY['accepted'::text, 'running'::text, 'succeeded'::text, 'failed'::text, 'cancelled'::text])))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_trial_no_check",
+      "type": "c",
+      "definition": "CHECK ((trial_no > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_version_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (version_id) REFERENCES app.workflow_versions(id)",
+      "referenced_table": "workflow_versions"
+    },
+    {
+      "table_name": "workflow_runs",
+      "name": "workflow_runs_version_id_request_key_key",
+      "type": "u",
+      "definition": "UNIQUE (version_id, request_key)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_versions",
+      "name": "workflow_versions_check",
+      "type": "c",
+      "definition": "CHECK (((published_at IS NULL) OR (published_at >= created_at)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_versions",
+      "name": "workflow_versions_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_versions",
+      "name": "workflow_versions_version_no_check",
+      "type": "c",
+      "definition": "CHECK ((version_no > 0))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflow_versions",
+      "name": "workflow_versions_workflow_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (workflow_id) REFERENCES app.workflows(id)",
+      "referenced_table": "workflows"
+    },
+    {
+      "table_name": "workflow_versions",
+      "name": "workflow_versions_workflow_id_version_no_key",
+      "type": "u",
+      "definition": "UNIQUE (workflow_id, version_no)",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflows",
+      "name": "workflows_check",
+      "type": "c",
+      "definition": "CHECK (((archived_at IS NULL) OR (archived_at >= created_at)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflows",
+      "name": "workflows_name_check",
+      "type": "c",
+      "definition": "CHECK (((length(btrim(name)) >= 1) AND (length(btrim(name)) <= 120)))",
+      "referenced_table": null
+    },
+    {
+      "table_name": "workflows",
+      "name": "workflows_owner_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (owner_id) REFERENCES app.users(id)",
+      "referenced_table": "users"
+    },
+    {
+      "table_name": "workflows",
+      "name": "workflows_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referenced_table": null
+    }
+  ],
+  "indexes": [
+    {
+      "tablename": "artifacts",
+      "indexname": "artifact_expiry",
+      "indexdef": "CREATE INDEX artifact_expiry ON app.artifacts USING btree (expires_at) WHERE ((state = 'complete'::text) AND (expires_at IS NOT NULL))"
+    },
+    {
+      "tablename": "artifacts",
+      "indexname": "artifact_owner_created",
+      "indexdef": "CREATE INDEX artifact_owner_created ON app.artifacts USING btree (owner_id, created_at DESC)"
+    },
+    {
+      "tablename": "artifacts",
+      "indexname": "artifacts_pkey",
+      "indexdef": "CREATE UNIQUE INDEX artifacts_pkey ON app.artifacts USING btree (id)"
+    },
+    {
+      "tablename": "artifacts",
+      "indexname": "artifacts_storage_key_key",
+      "indexdef": "CREATE UNIQUE INDEX artifacts_storage_key_key ON app.artifacts USING btree (storage_key)"
+    },
+    {
+      "tablename": "candidate_evidence_links",
+      "indexname": "candidate_evidence_links_pkey",
+      "indexdef": "CREATE UNIQUE INDEX candidate_evidence_links_pkey ON app.candidate_evidence_links USING btree (candidate_id, calibration_run_id)"
+    },
+    {
+      "tablename": "candidate_evidence_links",
+      "indexname": "evidence_calibration",
+      "indexdef": "CREATE INDEX evidence_calibration ON app.candidate_evidence_links USING btree (calibration_run_id)"
+    },
+    {
+      "tablename": "cost_model_versions",
+      "indexname": "cost_model_versions_code_version_no_key",
+      "indexdef": "CREATE UNIQUE INDEX cost_model_versions_code_version_no_key ON app.cost_model_versions USING btree (code, version_no)"
+    },
+    {
+      "tablename": "cost_model_versions",
+      "indexname": "cost_model_versions_pkey",
+      "indexdef": "CREATE UNIQUE INDEX cost_model_versions_pkey ON app.cost_model_versions USING btree (id)"
+    },
+    {
+      "tablename": "decision_candidates",
+      "indexname": "candidate_cost_model",
+      "indexdef": "CREATE INDEX candidate_cost_model ON app.decision_candidates USING btree (cost_model_id)"
+    },
+    {
+      "tablename": "decision_candidates",
+      "indexname": "candidate_runtime",
+      "indexdef": "CREATE INDEX candidate_runtime ON app.decision_candidates USING btree (runtime_configuration_id)"
+    },
+    {
+      "tablename": "decision_candidates",
+      "indexname": "decision_candidates_decision_id_id_key",
+      "indexdef": "CREATE UNIQUE INDEX decision_candidates_decision_id_id_key ON app.decision_candidates USING btree (decision_id, id)"
+    },
+    {
+      "tablename": "decision_candidates",
+      "indexname": "decision_candidates_decision_id_runtime_configuration_id_key",
+      "indexdef": "CREATE UNIQUE INDEX decision_candidates_decision_id_runtime_configuration_id_key ON app.decision_candidates USING btree (decision_id, runtime_configuration_id)"
+    },
+    {
+      "tablename": "decision_candidates",
+      "indexname": "decision_candidates_pkey",
+      "indexdef": "CREATE UNIQUE INDEX decision_candidates_pkey ON app.decision_candidates USING btree (id)"
+    },
+    {
+      "tablename": "experiment_conditions",
+      "indexname": "experiment_conditions_pkey",
+      "indexdef": "CREATE UNIQUE INDEX experiment_conditions_pkey ON app.experiment_conditions USING btree (id)"
+    },
+    {
+      "tablename": "experiment_conditions",
+      "indexname": "experiment_conditions_scenario_input_volume_arrival_pattern_key",
+      "indexdef": "CREATE UNIQUE INDEX experiment_conditions_scenario_input_volume_arrival_pattern_key ON app.experiment_conditions USING btree (scenario, input_volume, arrival_pattern, mode, dataset_split, fixture_key, protocol_version)"
+    },
+    {
+      "tablename": "node_executions",
+      "indexname": "execution_node",
+      "indexdef": "CREATE INDEX execution_node ON app.node_executions USING btree (node_id)"
+    },
+    {
+      "tablename": "node_executions",
+      "indexname": "node_executions_pkey",
+      "indexdef": "CREATE UNIQUE INDEX node_executions_pkey ON app.node_executions USING btree (id)"
+    },
+    {
+      "tablename": "node_executions",
+      "indexname": "node_executions_run_id_node_id_key",
+      "indexdef": "CREATE UNIQUE INDEX node_executions_run_id_node_id_key ON app.node_executions USING btree (run_id, node_id)"
+    },
+    {
+      "tablename": "operation_versions",
+      "indexname": "operation_versions_code_version_key",
+      "indexdef": "CREATE UNIQUE INDEX operation_versions_code_version_key ON app.operation_versions USING btree (code, version)"
+    },
+    {
+      "tablename": "operation_versions",
+      "indexname": "operation_versions_pkey",
+      "indexdef": "CREATE UNIQUE INDEX operation_versions_pkey ON app.operation_versions USING btree (id)"
+    },
+    {
+      "tablename": "run_measurements",
+      "indexname": "run_measurements_pkey",
+      "indexdef": "CREATE UNIQUE INDEX run_measurements_pkey ON app.run_measurements USING btree (run_id)"
+    },
+    {
+      "tablename": "run_results",
+      "indexname": "result_attempt",
+      "indexdef": "CREATE INDEX result_attempt ON app.run_results USING btree (source_attempt_id)"
+    },
+    {
+      "tablename": "run_results",
+      "indexname": "result_file",
+      "indexdef": "CREATE INDEX result_file ON app.run_results USING btree (artifact_id)"
+    },
+    {
+      "tablename": "run_results",
+      "indexname": "run_results_pkey",
+      "indexdef": "CREATE UNIQUE INDEX run_results_pkey ON app.run_results USING btree (run_id, artifact_id)"
+    },
+    {
+      "tablename": "run_verifications",
+      "indexname": "run_verifications_pkey",
+      "indexdef": "CREATE UNIQUE INDEX run_verifications_pkey ON app.run_verifications USING btree (run_id)"
+    },
+    {
+      "tablename": "runtime_configurations",
+      "indexname": "runtime_configurations_environment_version_no_key",
+      "indexdef": "CREATE UNIQUE INDEX runtime_configurations_environment_version_no_key ON app.runtime_configurations USING btree (environment, version_no)"
+    },
+    {
+      "tablename": "runtime_configurations",
+      "indexname": "runtime_configurations_pkey",
+      "indexdef": "CREATE UNIQUE INDEX runtime_configurations_pkey ON app.runtime_configurations USING btree (id)"
+    },
+    {
+      "tablename": "schema_migrations",
+      "indexname": "schema_migrations_pkey",
+      "indexdef": "CREATE UNIQUE INDEX schema_migrations_pkey ON app.schema_migrations USING btree (version)"
+    },
+    {
+      "tablename": "selection_decisions",
+      "indexname": "selection_decisions_execution_id_attempt_no_key",
+      "indexdef": "CREATE UNIQUE INDEX selection_decisions_execution_id_attempt_no_key ON app.selection_decisions USING btree (execution_id, attempt_no)"
+    },
+    {
+      "tablename": "selection_decisions",
+      "indexname": "selection_decisions_pkey",
+      "indexdef": "CREATE UNIQUE INDEX selection_decisions_pkey ON app.selection_decisions USING btree (id)"
+    },
+    {
+      "tablename": "selection_policy_versions",
+      "indexname": "selection_policy_versions_code_version_no_key",
+      "indexdef": "CREATE UNIQUE INDEX selection_policy_versions_code_version_no_key ON app.selection_policy_versions USING btree (code, version_no)"
+    },
+    {
+      "tablename": "selection_policy_versions",
+      "indexname": "selection_policy_versions_pkey",
+      "indexdef": "CREATE UNIQUE INDEX selection_policy_versions_pkey ON app.selection_policy_versions USING btree (id)"
+    },
+    {
+      "tablename": "task_artifacts",
+      "indexname": "task_artifact_file",
+      "indexdef": "CREATE INDEX task_artifact_file ON app.task_artifacts USING btree (artifact_id)"
+    },
+    {
+      "tablename": "task_artifacts",
+      "indexname": "task_artifacts_pkey",
+      "indexdef": "CREATE UNIQUE INDEX task_artifacts_pkey ON app.task_artifacts USING btree (attempt_id, direction, port_name)"
+    },
+    {
+      "tablename": "task_attempts",
+      "indexname": "task_attempts_decision_id_key",
+      "indexdef": "CREATE UNIQUE INDEX task_attempts_decision_id_key ON app.task_attempts USING btree (decision_id)"
+    },
+    {
+      "tablename": "task_attempts",
+      "indexname": "task_attempts_dispatch_reference_key",
+      "indexdef": "CREATE UNIQUE INDEX task_attempts_dispatch_reference_key ON app.task_attempts USING btree (dispatch_reference)"
+    },
+    {
+      "tablename": "task_attempts",
+      "indexname": "task_attempts_pkey",
+      "indexdef": "CREATE UNIQUE INDEX task_attempts_pkey ON app.task_attempts USING btree (id)"
+    },
+    {
+      "tablename": "task_measurements",
+      "indexname": "task_measurements_pkey",
+      "indexdef": "CREATE UNIQUE INDEX task_measurements_pkey ON app.task_measurements USING btree (attempt_id)"
+    },
+    {
+      "tablename": "user_credentials",
+      "indexname": "user_credentials_pkey",
+      "indexdef": "CREATE UNIQUE INDEX user_credentials_pkey ON app.user_credentials USING btree (user_id)"
+    },
+    {
+      "tablename": "users",
+      "indexname": "users_email_key",
+      "indexdef": "CREATE UNIQUE INDEX users_email_key ON app.users USING btree (email)"
+    },
+    {
+      "tablename": "users",
+      "indexname": "users_pkey",
+      "indexdef": "CREATE UNIQUE INDEX users_pkey ON app.users USING btree (id)"
+    },
+    {
+      "tablename": "workflow_edges",
+      "indexname": "edge_target",
+      "indexdef": "CREATE INDEX edge_target ON app.workflow_edges USING btree (version_id, target_node_id)"
+    },
+    {
+      "tablename": "workflow_edges",
+      "indexname": "workflow_edges_pkey",
+      "indexdef": "CREATE UNIQUE INDEX workflow_edges_pkey ON app.workflow_edges USING btree (version_id, source_node_id, target_node_id)"
+    },
+    {
+      "tablename": "workflow_nodes",
+      "indexname": "node_operation",
+      "indexdef": "CREATE INDEX node_operation ON app.workflow_nodes USING btree (operation_version_id)"
+    },
+    {
+      "tablename": "workflow_nodes",
+      "indexname": "workflow_nodes_pkey",
+      "indexdef": "CREATE UNIQUE INDEX workflow_nodes_pkey ON app.workflow_nodes USING btree (id)"
+    },
+    {
+      "tablename": "workflow_nodes",
+      "indexname": "workflow_nodes_version_id_id_key",
+      "indexdef": "CREATE UNIQUE INDEX workflow_nodes_version_id_id_key ON app.workflow_nodes USING btree (version_id, id)"
+    },
+    {
+      "tablename": "workflow_nodes",
+      "indexname": "workflow_nodes_version_id_node_key_key",
+      "indexdef": "CREATE UNIQUE INDEX workflow_nodes_version_id_node_key_key ON app.workflow_nodes USING btree (version_id, node_key)"
+    },
+    {
+      "tablename": "workflow_runs",
+      "indexname": "run_active",
+      "indexdef": "CREATE INDEX run_active ON app.workflow_runs USING btree (accepted_at) WHERE (status = ANY (ARRAY['accepted'::text, 'running'::text]))"
+    },
+    {
+      "tablename": "workflow_runs",
+      "indexname": "run_input",
+      "indexdef": "CREATE INDEX run_input ON app.workflow_runs USING btree (input_artifact_id)"
+    },
+    {
+      "tablename": "workflow_runs",
+      "indexname": "run_policy",
+      "indexdef": "CREATE INDEX run_policy ON app.workflow_runs USING btree (policy_version_id)"
+    },
+    {
+      "tablename": "workflow_runs",
+      "indexname": "run_version_accepted",
+      "indexdef": "CREATE INDEX run_version_accepted ON app.workflow_runs USING btree (version_id, accepted_at DESC)"
+    },
+    {
+      "tablename": "workflow_runs",
+      "indexname": "workflow_runs_condition_id_trial_no_key",
+      "indexdef": "CREATE UNIQUE INDEX workflow_runs_condition_id_trial_no_key ON app.workflow_runs USING btree (condition_id, trial_no)"
+    },
+    {
+      "tablename": "workflow_runs",
+      "indexname": "workflow_runs_pkey",
+      "indexdef": "CREATE UNIQUE INDEX workflow_runs_pkey ON app.workflow_runs USING btree (id)"
+    },
+    {
+      "tablename": "workflow_runs",
+      "indexname": "workflow_runs_version_id_request_key_key",
+      "indexdef": "CREATE UNIQUE INDEX workflow_runs_version_id_request_key_key ON app.workflow_runs USING btree (version_id, request_key)"
+    },
+    {
+      "tablename": "workflow_versions",
+      "indexname": "workflow_versions_pkey",
+      "indexdef": "CREATE UNIQUE INDEX workflow_versions_pkey ON app.workflow_versions USING btree (id)"
+    },
+    {
+      "tablename": "workflow_versions",
+      "indexname": "workflow_versions_workflow_id_version_no_key",
+      "indexdef": "CREATE UNIQUE INDEX workflow_versions_workflow_id_version_no_key ON app.workflow_versions USING btree (workflow_id, version_no)"
+    },
+    {
+      "tablename": "workflows",
+      "indexname": "workflow_owner_created",
+      "indexdef": "CREATE INDEX workflow_owner_created ON app.workflows USING btree (owner_id, created_at DESC)"
+    },
+    {
+      "tablename": "workflows",
+      "indexname": "workflows_pkey",
+      "indexdef": "CREATE UNIQUE INDEX workflows_pkey ON app.workflows USING btree (id)"
+    }
+  ]
+}

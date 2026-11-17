@@ -1,0 +1,235 @@
+erDiagram
+  artifacts {
+    uuid id
+    uuid owner_id
+    text storage_key
+    text original_name
+    text media_kind
+    int8 size_bytes
+    int8 decoded_pixels
+    text sha256
+    text state
+    timestamptz created_at
+    timestamptz expires_at
+  }
+  candidate_evidence_links {
+    uuid candidate_id
+    uuid calibration_run_id
+  }
+  cost_model_versions {
+    uuid id
+    text code
+    int4 version_no
+    text currency
+    date rate_date
+    text accounting_scope
+    jsonb rates
+  }
+  decision_candidates {
+    uuid id
+    uuid decision_id
+    uuid runtime_configuration_id
+    bool eligible
+    text exclusion_reason
+    int8 predicted_ms
+    numeric predicted_cost
+    uuid cost_model_id
+    text uncertainty_note
+  }
+  experiment_conditions {
+    uuid id
+    text scenario
+    text input_volume
+    text arrival_pattern
+    text mode
+    text dataset_split
+    text fixture_key
+    text protocol_version
+  }
+  node_executions {
+    uuid id
+    uuid run_id
+    uuid node_id
+    text status
+  }
+  operation_versions {
+    uuid id
+    text code
+    int4 version
+    text input_kind
+    text output_kind
+    jsonb parameter_contract
+    text description
+  }
+  run_measurements {
+    uuid run_id
+    int8 end_to_end_ms
+    numeric modeled_cost
+    uuid cost_model_id
+    timestamptz observation_window_start
+    timestamptz observation_window_end
+    numeric allocated_idle_cost
+    text unavailable_reason
+    timestamptz recorded_at
+  }
+  run_results {
+    uuid run_id
+    uuid artifact_id
+    uuid source_attempt_id
+  }
+  run_verifications {
+    uuid run_id
+    text outcome
+    text checker_version
+    text expected_result_key
+    timestamptz checked_at
+    text note
+  }
+  runtime_configurations {
+    uuid id
+    text environment
+    int4 version_no
+    text region
+    text execution_model
+    int4 cpu_units
+    int4 memory_mib
+    jsonb settings
+  }
+  schema_migrations {
+    int4 version
+    text description
+    timestamptz applied_at
+  }
+  selection_decisions {
+    uuid id
+    uuid execution_id
+    int4 attempt_no
+    uuid selected_candidate_id
+    bool is_fallback
+    text explanation
+    timestamptz created_at
+    timestamptz sealed_at
+  }
+  selection_policy_versions {
+    uuid id
+    text code
+    int4 version_no
+    jsonb definition
+    timestamptz created_at
+  }
+  task_artifacts {
+    uuid attempt_id
+    uuid artifact_id
+    text direction
+    text port_name
+  }
+  task_attempts {
+    uuid id
+    uuid decision_id
+    text dispatch_reference
+    text status
+    timestamptz queued_at
+    timestamptz started_at
+    timestamptz finished_at
+    text error_code
+    text safe_error_message
+  }
+  task_measurements {
+    uuid attempt_id
+    int8 processing_ms
+    numeric modeled_cost
+    uuid cost_model_id
+    numeric actual_cpu_seconds
+    int8 peak_memory_bytes
+    text unavailable_reason
+    timestamptz recorded_at
+  }
+  user_credentials {
+    uuid user_id
+    text password_hash
+    timestamptz updated_at
+  }
+  users {
+    uuid id
+    text email
+    text display_name
+    bool is_active
+    timestamptz created_at
+  }
+  workflow_edges {
+    uuid version_id
+    uuid source_node_id
+    uuid target_node_id
+  }
+  workflow_nodes {
+    uuid id
+    uuid version_id
+    text node_key
+    uuid operation_version_id
+    jsonb parameters
+    numeric position_x
+    numeric position_y
+  }
+  workflow_runs {
+    uuid id
+    uuid version_id
+    uuid input_artifact_id
+    uuid policy_version_id
+    text priority
+    uuid condition_id
+    int4 trial_no
+    text data_origin
+    uuid request_key
+    text status
+    timestamptz accepted_at
+    timestamptz started_at
+    timestamptz finished_at
+    text error_code
+  }
+  workflow_versions {
+    uuid id
+    uuid workflow_id
+    int4 version_no
+    timestamptz created_at
+    timestamptz published_at
+  }
+  workflows {
+    uuid id
+    uuid owner_id
+    text name
+    timestamptz archived_at
+    timestamptz created_at
+  }
+  users ||--o{ artifacts : "artifacts_owner_id_fkey"
+  workflow_runs ||--o{ candidate_evidence_links : "candidate_evidence_links_calibration_run_id_fkey"
+  decision_candidates ||--o{ candidate_evidence_links : "candidate_evidence_links_candidate_id_fkey"
+  cost_model_versions |o--o{ decision_candidates : "decision_candidates_cost_model_id_fkey"
+  selection_decisions ||--o{ decision_candidates : "decision_candidates_decision_id_fkey"
+  runtime_configurations ||--o{ decision_candidates : "decision_candidates_runtime_configuration_id_fkey"
+  workflow_nodes ||--o{ node_executions : "node_executions_node_id_fkey"
+  workflow_runs ||--o{ node_executions : "node_executions_run_id_fkey"
+  cost_model_versions |o--o{ run_measurements : "run_measurements_cost_model_id_fkey"
+  workflow_runs ||--o| run_measurements : "run_measurements_run_id_fkey"
+  artifacts ||--o{ run_results : "run_results_artifact_id_fkey"
+  workflow_runs ||--o{ run_results : "run_results_run_id_fkey"
+  task_attempts ||--o{ run_results : "run_results_source_attempt_id_fkey"
+  workflow_runs ||--o| run_verifications : "run_verifications_run_id_fkey"
+  decision_candidates |o--o| selection_decisions : "selected_candidate_same_decision"
+  node_executions ||--o{ selection_decisions : "selection_decisions_execution_id_fkey"
+  artifacts ||--o{ task_artifacts : "task_artifacts_artifact_id_fkey"
+  task_attempts ||--o{ task_artifacts : "task_artifacts_attempt_id_fkey"
+  selection_decisions ||--o| task_attempts : "task_attempts_decision_id_fkey"
+  task_attempts ||--o| task_measurements : "task_measurements_attempt_id_fkey"
+  cost_model_versions |o--o{ task_measurements : "task_measurements_cost_model_id_fkey"
+  users ||--o| user_credentials : "user_credentials_user_id_fkey"
+  workflow_versions ||--o{ workflow_edges : "workflow_edges_version_id_fkey"
+  workflow_nodes ||--o{ workflow_edges : "workflow_edges_version_id_source_node_id_fkey"
+  workflow_nodes ||--o{ workflow_edges : "workflow_edges_version_id_target_node_id_fkey"
+  operation_versions ||--o{ workflow_nodes : "workflow_nodes_operation_version_id_fkey"
+  workflow_versions ||--o{ workflow_nodes : "workflow_nodes_version_id_fkey"
+  experiment_conditions |o--o{ workflow_runs : "workflow_runs_condition_id_fkey"
+  artifacts ||--o{ workflow_runs : "workflow_runs_input_artifact_id_fkey"
+  selection_policy_versions ||--o{ workflow_runs : "workflow_runs_policy_version_id_fkey"
+  workflow_versions ||--o{ workflow_runs : "workflow_runs_version_id_fkey"
+  workflows ||--o{ workflow_versions : "workflow_versions_workflow_id_fkey"
+  users ||--o{ workflows : "workflows_owner_id_fkey"

@@ -1,0 +1,11 @@
+.git
+.idea
+.runtime
+.env
+.env.*
+__pycache__
+*.pyc
+*.log
+tmp
+output
+docs
